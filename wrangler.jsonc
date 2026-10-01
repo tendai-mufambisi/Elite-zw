@@ -12,8 +12,7 @@
     {
       "binding": "DB",
       "database_name": "elite-gutters-zw",
-      // Replace with the real id from `npx wrangler d1 create elite-gutters-zw`.
-      "database_id": "00000000-0000-0000-0000-000000000000",
+      "database_id": "4f2ad8fd-e754-4d2b-b14b-5947cb6b97f7",
       "migrations_dir": "migrations"
     }
   ],
