@@ -225,38 +225,6 @@ export const services = [
     ] as readonly Faq[],
   },
   {
-    slug: "gutter-repairs",
-    title: "Repairs & Maintenance",
-    metaTitle: "Gutter Repairs & Maintenance",
-    short: "Fix the leak before it spreads.",
-    intro:
-      "Repair services for existing gutters. We fix leaks, re-align sagging gutters and replace damaged sections so your gutters work properly again and send water to the downpipes, not down your walls.",
-    benefits: [
-      "Leaking joints and sections sealed",
-      "Sagging gutters re-aligned and re-supported",
-      "Damaged sections and downpipes replaced",
-      "Water carried away from walls and foundations",
-    ],
-    finishes: [],
-    image: undefined,
-    drawing: "repair",
-    gallery: [],
-    faqs: [
-      [
-        "Why are my gutters sagging?",
-        "Sagging usually comes from loose or missing brackets, or from the weight of water and debris sitting in a blocked gutter. Re-aligning and re-supporting the run lets water flow to the downpipes again.",
-      ],
-      [
-        "Can you repair gutters you did not install?",
-        "Yes. Send us photos of the problem via WhatsApp and we will advise whether a repair or a replacement makes more sense.",
-      ],
-      [
-        "When is replacement better than repair?",
-        "If an old sectional gutter leaks at many joints, replacing it with a seamless gutter is often the better long-term option.",
-      ],
-    ] as readonly Faq[],
-  },
-  {
     slug: "gutter-cleaning",
     title: "Gutter Cleaning",
     metaTitle: "Gutter Cleaning & Blockage Removal",
@@ -285,157 +253,6 @@ export const services = [
       [
         "Do seamless gutters need less cleaning?",
         "Yes. With no joints along the run, debris has fewer places to catch, but they still need an occasional clean.",
-      ],
-    ] as readonly Faq[],
-  },
-  {
-    slug: "waterproofing",
-    title: "Torch-on Waterproofing",
-    metaTitle: "Torch-on Waterproofing & Rubberiser",
-    short: "Keep the rain on the outside.",
-    intro:
-      "Torch-on waterproofing and rubberiser for flat roofs, parapet walls, balconies and box gutters. A leaking roof rarely stays a small problem: water soaks into ceilings, stains walls, rots roof timbers and brings damp and mould into the home. We seal the surface so rainwater runs off instead of finding its way inside.",
-    benefits: [
-      "Torch-on membrane for flat concrete roofs and parapets",
-      "Rubberiser coating for edges, joints and awkward details",
-      "Balconies, box gutters and roof leaks",
-      "Surfaces cleaned and prepared before sealing",
-      "Stops damp, stains and mould before they spread",
-    ],
-    finishes: [],
-    image: "waterproofing-flat-roof-parapet",
-    banner: "waterproofing-banner",
-    gallery: [
-      "waterproofing-flat-roof-parapet",
-      "waterproofing-flat-roof-finished",
-      "waterproofing-roof-edges",
-      "waterproofing-team-on-roof",
-      "waterproofing-membrane-rolls",
-    ],
-    photoLabels: {
-      "waterproofing-flat-roof-parapet": "Torch-on waterproofing, flat roof",
-      "waterproofing-flat-roof-finished": "Torch-on waterproofing, flat roof",
-      "waterproofing-roof-edges": "Parapets and edges sealed",
-      "waterproofing-team-on-roof": "Our team on site",
-      "waterproofing-membrane-rolls": "Torch-on membrane rolls",
-    },
-    methods: {
-      eyebrow: "How we waterproof",
-      title: "The right seal for each surface.",
-      items: [
-        {
-          title: "Torch-on membrane",
-          text: "Rolls of bitumen membrane are heated with a gas torch so they melt onto the roof and bond firmly. Each roll overlaps the last, leaving one continuous waterproof layer.",
-        },
-        {
-          title: "Rubberiser",
-          text: "A liquid rubber coating brushed or rolled on in layers. It stays flexible as the roof heats and cools, which makes it ideal for joints, edges and around fittings.",
-        },
-        {
-          title: "Preparation first",
-          text: "The surface is cleaned, loose material removed and cracks filled before anything goes down, so the waterproofing bonds to a sound base.",
-        },
-        {
-          title: "Details sealed",
-          text: "Parapet walls, upstands, outlets and corners are where leaks usually start. We take the waterproofing up and around them so water has nowhere to get in.",
-        },
-      ],
-    },
-    reelsHead: {
-      eyebrow: "Project videos",
-      title: "Waterproofing on site.",
-      text: "Filmed by our team on real jobs.",
-    },
-    reels: [
-      { slot: "video-waterproofing-flat-roof", label: "Torch-on waterproofing, flat roof" },
-      { slot: "video-waterproofing-membrane", label: "Torch-on membrane delivered to site" },
-    ],
-    faqs: [
-      [
-        "What is torch-on waterproofing?",
-        "Torch-on is a bitumen membrane supplied in rolls. It is heated with a gas torch as it is laid, so it melts onto the roof surface and bonds in place. The overlapping rolls form one continuous waterproof layer.",
-      ],
-      [
-        "What is rubberiser?",
-        "Rubberiser is a liquid rubber waterproofing coating applied by brush or roller. It stays flexible, so it suits joints, edges, small roofs and areas where a membrane is hard to fit.",
-      ],
-      [
-        "Which surfaces can you waterproof?",
-        "Flat concrete roofs, parapet walls, balconies, box gutters and other areas where water sits or runs.",
-      ],
-      [
-        "My roof is leaking. Can you help?",
-        "Yes. Send us photos of the roof and the damp patches inside via WhatsApp and we will advise on the best way to seal it.",
-      ],
-    ] as readonly Faq[],
-  },
-  {
-    slug: "roof-wall-painting",
-    title: "Roof & Wall Painting",
-    metaTitle: "Roof Painting & Wall Painting",
-    short: "A fresh finish from the top down.",
-    intro:
-      "Roof painting and wall painting that make a tired building look new again. We paint tiled roofs, metal sheet roofs and exterior walls, preparing each surface first so the paint holds. Choose a colour to match your gutters, fascia boards and window frames for one finished look.",
-    benefits: [
-      "Tiled roofs and metal sheet roofs",
-      "Exterior wall painting",
-      "Surfaces cleaned and prepared before painting",
-      "Colours to match your gutters, fascia and frames",
-      "Protects roofs and walls from sun and weather",
-    ],
-    finishes: [],
-    image: "roof-painting-tile-roof",
-    banner: "roof-painting-banner",
-    gallery: [
-      "roof-painting-tile-roof",
-      "roof-painting-tiles-close-up",
-      "roof-painting-ridge",
-      "roof-painting-metal-sheet",
-      "roof-painting-metal-roof-house",
-    ],
-    photoLabels: {
-      "roof-painting-tile-roof": "Painted tiled roof",
-      "roof-painting-tiles-close-up": "Painted roof tiles",
-      "roof-painting-ridge": "Painted tiled roof",
-      "roof-painting-metal-sheet": "Painted metal sheet roof",
-      "roof-painting-metal-roof-house": "Painted metal sheet roof",
-    },
-    methods: {
-      eyebrow: "What we paint",
-      title: "Roofs and walls, done properly.",
-      items: [
-        {
-          title: "Tiled roofs",
-          text: "Faded and weathered concrete tiles are cleaned and repainted, ridges included, giving the whole roof an even, fresh colour.",
-        },
-        {
-          title: "Metal sheet roofs",
-          text: "Corrugated and IBR sheet roofs are prepared and painted to protect the metal and refresh the colour.",
-        },
-        {
-          title: "Exterior walls",
-          text: "Walls, boundary walls and parapets painted in a clean finish that lifts the whole property.",
-        },
-        {
-          title: "Preparation first",
-          text: "Dirt, moss and flaking paint are removed and the surface is made ready before painting, so the new coat bonds and lasts.",
-        },
-      ],
-    },
-    video: "video-roof-painting",
-    faqs: [
-      [
-        "Which roofs can you paint?",
-        "Concrete tiled roofs and metal sheet roofs, such as corrugated and IBR.",
-      ],
-      ["Do you paint walls as well?", "Yes. We paint exterior walls, boundary walls and parapets."],
-      [
-        "Can the roof colour match my gutters?",
-        "Yes. Choose a roof colour that works with your gutters, fascia boards and window frames for a finished, matching look.",
-      ],
-      [
-        "How do I get a quote?",
-        "Send us photos of the roof or walls via WhatsApp and we will get back to you with a quote.",
       ],
     ] as readonly Faq[],
   },
@@ -628,7 +445,11 @@ export const services = [
     finishes: ["Clear glass", "Aluminium", "Charcoal", "Bronze"],
     image: "burglar-proofing-folding-doors",
     drawing: "window-guard",
-    gallery: ["burglar-proofing-folding-doors", "burglar-proofing-windows", "burglar-proofing-bronze-windows"],
+    gallery: [
+      "burglar-proofing-folding-doors",
+      "burglar-proofing-windows",
+      "burglar-proofing-bronze-windows",
+    ],
     photoLabels: {
       "burglar-proofing-folding-doors": "Retractable burglar proofing",
       "burglar-proofing-windows": "Retractable burglar proofing",
@@ -653,6 +474,170 @@ export const services = [
       ],
     ] as readonly Faq[],
   },
+  {
+    slug: "gutter-repairs",
+    title: "Repairs & Maintenance",
+    metaTitle: "Gutter Repairs & Maintenance",
+    short: "Fix the leak before it spreads.",
+    intro:
+      "Repair services for existing gutters. We fix leaks, re-align sagging gutters and replace damaged sections so your gutters work properly again and send water to the downpipes, not down your walls.",
+    benefits: [
+      "Leaking joints and sections sealed",
+      "Sagging gutters re-aligned and re-supported",
+      "Damaged sections and downpipes replaced",
+      "Water carried away from walls and foundations",
+    ],
+    finishes: [],
+    image: undefined,
+    drawing: "repair",
+    gallery: [],
+    faqs: [
+      [
+        "Why are my gutters sagging?",
+        "Sagging usually comes from loose or missing brackets, or from the weight of water and debris sitting in a blocked gutter. Re-aligning and re-supporting the run lets water flow to the downpipes again.",
+      ],
+      [
+        "Can you repair gutters you did not install?",
+        "Yes. Send us photos of the problem via WhatsApp and we will advise whether a repair or a replacement makes more sense.",
+      ],
+      [
+        "When is replacement better than repair?",
+        "If an old sectional gutter leaks at many joints, replacing it with a seamless gutter is often the better long-term option.",
+      ],
+    ] as readonly Faq[],
+  },
+  {
+    slug: "waterproofing",
+    title: "Torch-on Waterproofing",
+    metaTitle: "Torch-on Waterproofing & Rubberiser",
+    short: "Keep the rain on the outside.",
+    intro:
+      "Torch-on waterproofing and rubberiser for flat roofs, parapet walls, balconies and box gutters. A leaking roof rarely stays a small problem: water soaks into ceilings, stains walls, rots roof timbers and brings damp and mould into the home. We seal the surface so rainwater runs off instead of finding its way inside.",
+    benefits: [
+      "Torch-on membrane for flat concrete roofs and parapets",
+      "Rubberiser coating for edges, joints and awkward details",
+      "Balconies, box gutters and roof leaks",
+      "Surfaces cleaned and prepared before sealing",
+      "Stops damp, stains and mould before they spread",
+    ],
+    finishes: [],
+    image: "waterproofing-flat-roof-parapet",
+    banner: "waterproofing-banner",
+    gallery: ["waterproofing-flat-roof-parapet", "waterproofing-membrane-rolls"],
+    photoLabels: {
+      "waterproofing-flat-roof-parapet": "Torch-on waterproofing, flat roof",
+      "waterproofing-membrane-rolls": "Torch-on membrane rolls",
+    },
+    methods: {
+      eyebrow: "How we waterproof",
+      title: "The right seal for each surface.",
+      items: [
+        {
+          title: "Torch-on membrane",
+          text: "Rolls of bitumen membrane are heated with a gas torch so they melt onto the roof and bond firmly. Each roll overlaps the last, leaving one continuous waterproof layer.",
+        },
+        {
+          title: "Rubberiser",
+          text: "A liquid rubber coating brushed or rolled on in layers. It stays flexible as the roof heats and cools, which makes it ideal for joints, edges and around fittings.",
+        },
+        {
+          title: "Preparation first",
+          text: "The surface is cleaned, loose material removed and cracks filled before anything goes down, so the waterproofing bonds to a sound base.",
+        },
+        {
+          title: "Details sealed",
+          text: "Parapet walls, upstands, outlets and corners are where leaks usually start. We take the waterproofing up and around them so water has nowhere to get in.",
+        },
+      ],
+    },
+    reelsHead: {
+      eyebrow: "Project videos",
+      title: "Waterproofing on site.",
+      text: "Filmed by our team on real jobs.",
+    },
+    reels: [
+      { slot: "video-waterproofing-flat-roof", label: "Torch-on waterproofing, flat roof" },
+      { slot: "video-waterproofing-membrane", label: "Torch-on membrane delivered to site" },
+    ],
+    faqs: [
+      [
+        "What is torch-on waterproofing?",
+        "Torch-on is a bitumen membrane supplied in rolls. It is heated with a gas torch as it is laid, so it melts onto the roof surface and bonds in place. The overlapping rolls form one continuous waterproof layer.",
+      ],
+      [
+        "What is rubberiser?",
+        "Rubberiser is a liquid rubber waterproofing coating applied by brush or roller. It stays flexible, so it suits joints, edges, small roofs and areas where a membrane is hard to fit.",
+      ],
+      [
+        "Which surfaces can you waterproof?",
+        "Flat concrete roofs, parapet walls, balconies, box gutters and other areas where water sits or runs.",
+      ],
+      [
+        "My roof is leaking. Can you help?",
+        "Yes. Send us photos of the roof and the damp patches inside via WhatsApp and we will advise on the best way to seal it.",
+      ],
+    ] as readonly Faq[],
+  },
+  {
+    slug: "roof-wall-painting",
+    title: "Roof & Wall Painting",
+    metaTitle: "Roof Painting & Wall Painting",
+    short: "A fresh finish from the top down.",
+    intro:
+      "Roof painting and wall painting that make a tired building look new again. We paint tiled roofs, metal sheet roofs and exterior walls, preparing each surface first so the paint holds. Choose a colour to match your gutters, fascia boards and window frames for one finished look.",
+    benefits: [
+      "Tiled roofs and metal sheet roofs",
+      "Exterior wall painting",
+      "Surfaces cleaned and prepared before painting",
+      "Colours to match your gutters, fascia and frames",
+      "Protects roofs and walls from sun and weather",
+    ],
+    finishes: [],
+    image: "roof-painting-tile-roof",
+    banner: "roof-painting-banner",
+    // One photo: the painted gable wall and tiled roof.
+    gallery: ["roof-painting-tile-roof"],
+    photoLabels: {
+      "roof-painting-tile-roof": "Painted gable wall and tiled roof",
+    },
+    methods: {
+      eyebrow: "What we paint",
+      title: "Roofs and walls, done properly.",
+      items: [
+        {
+          title: "Tiled roofs",
+          text: "Faded and weathered concrete tiles are cleaned and repainted, ridges included, giving the whole roof an even, fresh colour.",
+        },
+        {
+          title: "Metal sheet roofs",
+          text: "Corrugated and IBR sheet roofs are prepared and painted to protect the metal and refresh the colour.",
+        },
+        {
+          title: "Exterior walls",
+          text: "Walls, boundary walls and parapets painted in a clean finish that lifts the whole property.",
+        },
+        {
+          title: "Preparation first",
+          text: "Dirt, moss and flaking paint are removed and the surface is made ready before painting, so the new coat bonds and lasts.",
+        },
+      ],
+    },
+    faqs: [
+      [
+        "Which roofs can you paint?",
+        "Concrete tiled roofs and metal sheet roofs, such as corrugated and IBR.",
+      ],
+      ["Do you paint walls as well?", "Yes. We paint exterior walls, boundary walls and parapets."],
+      [
+        "Can the roof colour match my gutters?",
+        "Yes. Choose a roof colour that works with your gutters, fascia boards and window frames for a finished, matching look.",
+      ],
+      [
+        "How do I get a quote?",
+        "Send us photos of the roof or walls via WhatsApp and we will get back to you with a quote.",
+      ],
+    ] as readonly Faq[],
+  },
 ] as const;
 
 export type Service = (typeof services)[number];
@@ -661,20 +646,8 @@ export type Service = (typeof services)[number];
 // client's ogee profile sheet: overall width, bottom width, back height and front height.
 export const gutterProfiles = {
   eyebrow: "Gutter profiles",
-  title: "Domestic & Industrial Gutter Profiles",
+  title: "Industrial Gutter Profile",
   profiles: [
-    {
-      kind: "domestic",
-      label: "Domestic",
-      for: "Homes",
-      size: { width: 125, bottom: 85, back: 80, front: 85 },
-      downpipe: "75mm x 50mm (2″ x 3″)",
-      points: [
-        "Standard domestic profile, sized for residential roofs",
-        "Ideal for: houses, townhouses, residential estates",
-        "Matching downpipes in the same finish",
-      ],
-    },
     {
       kind: "industrial",
       label: "Industrial",
@@ -689,8 +662,8 @@ export const gutterProfiles = {
       ],
     },
   ],
-  note: "Not sure which profile you need? We'll assess your roof and recommend the right size.",
-  whatsappText: "Hi Elite Gutters, I'd like advice on which gutter profile I need.",
+  note: "Not sure what size you need? We'll assess your roof and recommend the right gutter.",
+  whatsappText: "Hi Elite Gutters, I'd like advice on the right gutter size for my roof.",
 } as const;
 
 export const home = {
@@ -780,32 +753,6 @@ export const home = {
     title: "Everything else your roofline needs.",
     text: "Seamless gutters come first. We also install box gutters and rainwater harvesting systems, repair and clean existing gutters, and supply the products that complete the look.",
   },
-  // Waterproofing and roof painting get their own home page section, linking to their pages.
-  roofCare: {
-    head: {
-      eyebrow: "Roof protection",
-      title: "Waterproofing and roof painting.",
-      text: "Leaking flat roof or faded roof tiles? We seal roofs with torch-on waterproofing and rubberiser, and repaint tiled roofs, metal sheet roofs and walls.",
-    },
-    items: [
-      {
-        slug: "waterproofing",
-        video: "video-waterproofing-flat-roof",
-        label: "Torch-on waterproofing",
-        points: [
-          "Torch-on membrane for flat roofs",
-          "Rubberiser for edges and joints",
-          "Parapets, balconies and box gutters",
-        ],
-      },
-      {
-        slug: "roof-wall-painting",
-        video: "video-roof-painting",
-        label: "Roof & wall painting",
-        points: ["Tiled roofs", "Metal sheet roofs", "Exterior walls"],
-      },
-    ],
-  },
   mosaicHead: {
     eyebrow: "Recent projects",
     title: "Real homes. Real finishes.",
@@ -862,7 +809,11 @@ export const benefits = [
     title: "Matched finishes",
     text: "Gutters and downpipes to match your fascia, doors and windows.",
   },
-  { icon: "droplets", title: "Protects your walls", text: "Keeps rainwater off walls and foundations." },
+  {
+    icon: "droplets",
+    title: "Protects your walls",
+    text: "Keeps rainwater off walls and foundations.",
+  },
   { icon: "sparkles", title: "Low maintenance", text: "Built to stay looking new." },
   { icon: "wrench", title: "Formed on site", text: "Measured and made to fit your roofline." },
   {

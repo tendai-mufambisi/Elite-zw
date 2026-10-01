@@ -4881,3 +4881,18 @@ h3 {
   font-size: 20px;
   line-height: 1.2;
 }
+/* One gutter profile (industrial) on this site: drawing and details side by side. */
+.profile-grid {
+  grid-template-columns: minmax(0, 1fr);
+}
+@media (min-width: 900px) {
+  .profile-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: 40px;
+    align-items: center;
+  }
+  .profile-card > :first-child {
+    grid-row: span 4;
+  }
+}
