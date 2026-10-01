@@ -49,7 +49,7 @@ function ProjectsAdmin() {
   return (
     <AdminShell
       title="Projects"
-      description="The photos and videos on the Projects page, in the order shown. New photos go to the top."
+      description="Your project photos and videos. The Projects page shows the videos, in this order; photos show in the home grid and on the service pages you tick."
       actions={
         <Link
           to="/admin/projects/$id"

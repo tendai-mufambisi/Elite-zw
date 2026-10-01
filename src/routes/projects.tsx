@@ -24,7 +24,12 @@ function Projects() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const opener = useRef<HTMLElement | null>(null);
   const closeButton = useRef<HTMLButtonElement>(null);
-  const { projects } = useSiteData();
+  // Videos only on this page; photos still show on the home page and service pages.
+  const projects = useSiteData().projects.filter((p) => p.kind === "video");
+  // Only offer filters that have something to show.
+  const categories = projectCategories.filter(
+    (c) => c === "All" || projects.some((p) => p.category === c),
+  );
   const visible = projects.filter((item) => filter === "All" || item.category === filter);
   const active = activeIndex === null ? null : visible[activeIndex];
 
@@ -63,7 +68,7 @@ function Projects() {
         <div className="container">
           <SectionHead {...page.head} />
           <div className="filters" role="group" aria-label="Filter projects by product">
-            {projectCategories.map((c) => (
+            {categories.map((c) => (
               <button
                 key={c}
                 type="button"
@@ -88,10 +93,10 @@ function Projects() {
                     opener.current = e.currentTarget;
                     setActiveIndex(i);
                   }}
-                  aria-label={`Open ${(item.kind === "video") ? "video" : "image"}: ${item.caption}`}
+                  aria-label={`Open ${item.kind === "video" ? "video" : "image"}: ${item.caption}`}
                 >
                   <span className="project-thumb">
-                    {(item.kind === "video") ? (
+                    {item.kind === "video" ? (
                       <img
                         src={getVideo(item.slot).poster}
                         alt=""
@@ -103,7 +108,7 @@ function Projects() {
                     ) : (
                       <Media slot={item.slot} />
                     )}
-                    {(item.kind === "video") && (
+                    {item.kind === "video" && (
                       <span className="project-play" aria-hidden="true">
                         <Play size={22} fill="currentColor" />
                       </span>
@@ -112,7 +117,7 @@ function Projects() {
                   <strong>{item.caption}</strong>
                   <small>
                     {item.category}
-                    {(item.kind === "video") ? " · Video" : ""}
+                    {item.kind === "video" ? " · Video" : ""}
                   </small>
                 </button>
               </li>
@@ -147,7 +152,7 @@ function Projects() {
             <ChevronLeft />
           </button>
           <figure>
-            {(active.kind === "video") ? (
+            {active.kind === "video" ? (
               <VideoSlot slot={active.slot} className="lightbox-video" />
             ) : (
               <Media slot={active.slot} priority />

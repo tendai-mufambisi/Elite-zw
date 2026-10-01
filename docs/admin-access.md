@@ -16,7 +16,7 @@ founder from `/admin`. Changes go live the moment they are saved; there is no re
 
 | Section | Controls | Shows on the site |
 |---|---|---|
-| **Projects** | Add a photo (from the phone camera or gallery), caption, category, which service pages show it, hide/show, reorder, replace photo, delete | Projects page (in this order, newest uploads first), service page galleries, home page service cards |
+| **Projects** | Add a photo (from the phone camera or gallery), caption, category, which service pages show it, hide/show, reorder, replace photo, delete | Projects page (videos only, in this order), service page galleries and home page service cards (photos), home grid |
 | **Home grid** | Which six photos fill the "Recent projects" grid, with a crop preview per tile shape | Home page |
 | **Settings** | Phone, WhatsApp number, email, Facebook link, founder's name and photo, change password | Header, footer, contact page, every WhatsApp button and the floating WhatsApp chat, "Meet the founder" |
 

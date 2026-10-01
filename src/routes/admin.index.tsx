@@ -49,7 +49,7 @@ function Dashboard() {
 
       <div className="admin-two-col">
         <AdminCard
-          title="Projects page, first in line"
+          title="Projects, first in line"
           actions={
             <Link to="/admin/projects" className="admin-btn">
               All projects

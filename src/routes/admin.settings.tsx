@@ -80,10 +80,7 @@ function SettingsAdmin() {
             <Field label="Phone number" hint="Shown on the site exactly as typed.">
               <input required value={form.phone} onChange={set("phone")} inputMode="tel" />
             </Field>
-            <Field
-              label="WhatsApp number"
-              hint="With the country code, e.g. 263 77 001 0502."
-            >
+            <Field label="WhatsApp number" hint="With the country code, e.g. 263 77 001 0502.">
               <input required value={form.whatsapp} onChange={set("whatsapp")} inputMode="tel" />
             </Field>
             <Field label="Email">

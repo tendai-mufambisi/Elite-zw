@@ -97,7 +97,7 @@ function ProjectEditor() {
       title={isNew ? "Add a project photo" : "Edit project"}
       description={
         isNew
-          ? "Take or choose a photo of finished work. It goes to the top of the Projects page."
+          ? "Take or choose a photo of finished work. Tick the service pages it should appear on, or use it in the home grid."
           : undefined
       }
       actions={
