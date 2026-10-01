@@ -64,7 +64,9 @@ console.error = (...args: unknown[]) => {
 
 if (typeof globalThis.addEventListener === "function") {
   globalThis.addEventListener("error", (event) => record((event as ErrorEvent).error ?? event));
-  globalThis.addEventListener("unhandledrejection", (event) =>
+  // Annotated because the Workers global typings narrow addEventListener to
+  // their own event names, leaving this callback's parameter implicitly any.
+  globalThis.addEventListener("unhandledrejection", (event: Event) =>
     record((event as PromiseRejectionEvent).reason),
   );
 }

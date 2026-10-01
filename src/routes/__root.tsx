@@ -5,21 +5,19 @@ import {
   useRouter,
   HeadContent,
   Scripts,
+  useRouterState,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import type { ReactNode } from "react";
 
 import appCss from "../styles.css?url";
-import { reportLovableError } from "../lib/lovable-error-reporting";
 import { NotFound, SiteLayout } from "@/components/site/site";
 import { site } from "@/data/content";
+import { getSiteData } from "@/data/public-data";
 import { businessSchema } from "@/data/seo";
 
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
   const router = useRouter();
-  useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
-  }, [error]);
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -53,6 +51,11 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 }
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
+  // One read of the owner-editable data (projects, home grid, contacts, founder),
+  // shared by every page through the hooks in components/site/site-data.tsx.
+  loader: () => getSiteData(),
+  // Reuse it across in-app navigation; a full page load always fetches fresh data.
+  staleTime: 5 * 60 * 1000,
   head: () => ({
     meta: [
       { charSet: "utf-8" },
@@ -109,13 +112,21 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  // The owner dashboard has its own layout, without the public header and footer.
+  const isAdmin = useRouterState({
+    select: (state) => state.location.pathname.startsWith("/admin"),
+  });
 
   return (
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <SiteLayout>
+      {isAdmin ? (
         <Outlet />
-      </SiteLayout>
+      ) : (
+        <SiteLayout>
+          <Outlet />
+        </SiteLayout>
+      )}
     </QueryClientProvider>
   );
 }

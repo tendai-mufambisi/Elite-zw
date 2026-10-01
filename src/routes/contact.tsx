@@ -3,7 +3,8 @@ import { type FormEvent, useState } from "react";
 import { ArrowUpRight, Mail, MessageCircle, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Eyebrow, FacebookIcon, PageIntro } from "@/components/site/site";
-import { contactPage as page, services, site, whatsappLink } from "@/data/content";
+import { contactPage as page, services, site } from "@/data/content";
+import { useContact } from "@/components/site/site-data";
 import { breadcrumb, pageHead } from "@/data/seo";
 
 export const Route = createFileRoute("/contact")({
@@ -13,6 +14,7 @@ export const Route = createFileRoute("/contact")({
 });
 
 function Contact() {
+  const contact = useContact();
   const [photoName, setPhotoName] = useState("");
 
   function submit(e: FormEvent<HTMLFormElement>) {
@@ -30,7 +32,7 @@ function Contact() {
       photoName && `Photo: I'll attach ${photoName} in this chat.`,
     ].filter(Boolean);
     const message = [site.quoteText, "", ...details].join("\n");
-    window.open(whatsappLink(message), "_blank", "noopener,noreferrer");
+    window.open(contact.whatsappLink(message), "_blank", "noopener,noreferrer");
   }
 
   return (
@@ -50,13 +52,13 @@ function Contact() {
               <small>
                 <Phone size={13} aria-hidden="true" /> Call
               </small>
-              <a href={site.phoneHref}>{site.phone}</a>
+              <a href={contact.phoneHref}>{contact.phone}</a>
             </div>
             <div className="contact-method">
               <small>
                 <MessageCircle size={13} aria-hidden="true" /> WhatsApp
               </small>
-              <a href={site.whatsapp} target="_blank" rel="noopener noreferrer">
+              <a href={contact.whatsappLink()} target="_blank" rel="noopener noreferrer">
                 Chat on WhatsApp ↗
               </a>
             </div>
@@ -64,13 +66,13 @@ function Contact() {
               <small>
                 <Mail size={13} aria-hidden="true" /> Email
               </small>
-              <a href={`mailto:${site.email}`}>{site.email}</a>
+              <a href={`mailto:${contact.email}`}>{contact.email}</a>
             </div>
             <div className="contact-method">
               <small>
                 <FacebookIcon size={13} /> Facebook
               </small>
-              <a href={site.facebook} target="_blank" rel="noopener noreferrer">
+              <a href={contact.facebook} target="_blank" rel="noopener noreferrer">
                 Find us on Facebook ↗
               </a>
             </div>

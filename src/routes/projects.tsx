@@ -2,7 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ChevronLeft, ChevronRight, Play, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { Media, PageIntro, QuoteBand, SectionHead, VideoSlot } from "@/components/site/site";
-import { projectCategories, projects, projectsPage as page } from "@/data/content";
+import { projectCategories, projectsPage as page } from "@/data/content";
+import { useSiteData } from "@/components/site/site-data";
 import { getVideo } from "@/data/images";
 import { breadcrumb, pageHead } from "@/data/seo";
 
@@ -23,6 +24,7 @@ function Projects() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const opener = useRef<HTMLElement | null>(null);
   const closeButton = useRef<HTMLButtonElement>(null);
+  const { projects } = useSiteData();
   const visible = projects.filter((item) => filter === "All" || item.category === filter);
   const active = activeIndex === null ? null : visible[activeIndex];
 
@@ -78,7 +80,7 @@ function Projects() {
           </p>
           <ul className="project-grid">
             {visible.map((item, i) => (
-              <li key={`${item.category}-${item.slot}`}>
+              <li key={item.id}>
                 <button
                   type="button"
                   className="project-item"
@@ -86,10 +88,10 @@ function Projects() {
                     opener.current = e.currentTarget;
                     setActiveIndex(i);
                   }}
-                  aria-label={`Open ${item.video ? "video" : "image"}: ${item.caption}`}
+                  aria-label={`Open ${(item.kind === "video") ? "video" : "image"}: ${item.caption}`}
                 >
                   <span className="project-thumb">
-                    {item.video ? (
+                    {(item.kind === "video") ? (
                       <img
                         src={getVideo(item.slot).poster}
                         alt=""
@@ -101,7 +103,7 @@ function Projects() {
                     ) : (
                       <Media slot={item.slot} />
                     )}
-                    {item.video && (
+                    {(item.kind === "video") && (
                       <span className="project-play" aria-hidden="true">
                         <Play size={22} fill="currentColor" />
                       </span>
@@ -110,7 +112,7 @@ function Projects() {
                   <strong>{item.caption}</strong>
                   <small>
                     {item.category}
-                    {item.video ? " · Video" : ""}
+                    {(item.kind === "video") ? " · Video" : ""}
                   </small>
                 </button>
               </li>
@@ -145,7 +147,7 @@ function Projects() {
             <ChevronLeft />
           </button>
           <figure>
-            {active.video ? (
+            {(active.kind === "video") ? (
               <VideoSlot slot={active.slot} className="lightbox-video" />
             ) : (
               <Media slot={active.slot} priority />

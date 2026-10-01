@@ -26,7 +26,9 @@ import {
 import { ServiceDrawing } from "@/components/site/illustrations";
 import { CardSlider, HeroVideo, Reel, TextRotator } from "@/components/site/motion";
 import { Reveal } from "@/components/site/Reveal";
-import { benefits, home, projects, services, site } from "@/data/content";
+import { benefits, home, services, site } from "@/data/content";
+import { useContact, useMosaic, useSiteData } from "@/components/site/site-data";
+import { galleryFor } from "@/data/site-data";
 import { getImage } from "@/data/images";
 import { pageHead } from "@/data/seo";
 
@@ -46,11 +48,13 @@ const benefitIcons: Record<(typeof benefits)[number]["icon"], LucideIcon> = {
   building: Building2,
 };
 
-const captionFor = (slot: string) => projects.find((p) => p.slot === slot);
 // Seamless gutters is the lead product; the rest follow in "More than gutters".
 const [gutterService, ...otherServices] = services;
 
 function Home() {
+  const contact = useContact();
+  const data = useSiteData();
+  const mosaic = useMosaic();
   return (
     <>
       <section className="hero">
@@ -73,7 +77,7 @@ function Home() {
               </Link>
             </Button>
             <Button asChild variant="lightOutline" size="large">
-              <a href={site.whatsapp} target="_blank" rel="noopener noreferrer">
+              <a href={contact.whatsappLink()} target="_blank" rel="noopener noreferrer">
                 WhatsApp Us <ArrowUpRight />
               </a>
             </Button>
@@ -234,24 +238,19 @@ function Home() {
             />
           </Reveal>
           <ul className="mosaic">
-            {home.mosaic.map((slot, i) => {
-              const info = captionFor(slot);
-              return (
-                <li key={slot} className={`mosaic-item mosaic-${i + 1}`}>
-                  <Reveal variant="wipe" delay={(i % 4) * 80}>
-                    <Link to="/projects" className="mosaic-link">
-                      <Media slot={slot} />
-                      {info && (
-                        <span className="mosaic-caption">
-                          <small>{info.category}</small>
-                          {info.caption}
-                        </span>
-                      )}
-                    </Link>
-                  </Reveal>
-                </li>
-              );
-            })}
+            {mosaic.map((info, i) => (
+              <li key={info.id} className={`mosaic-item mosaic-${i + 1}`}>
+                <Reveal variant="wipe" delay={(i % 4) * 80}>
+                  <Link to="/projects" className="mosaic-link">
+                    <Media slot={info.slot} />
+                    <span className="mosaic-caption">
+                      <small>{info.category}</small>
+                      {info.caption}
+                    </span>
+                  </Link>
+                </Reveal>
+              </li>
+            ))}
           </ul>
         </div>
       </section>
@@ -270,7 +269,7 @@ function Home() {
                   {s.image ? (
                     // The card's own photo first, then the rest of that service's gallery.
                     <CardSlider
-                      slots={[...new Set([s.image, ...s.gallery])]}
+                      slots={[...new Set([s.image, ...galleryFor(s, data)])]}
                       labels={"photoLabels" in s ? s.photoLabels : undefined}
                       delay={i * 700}
                     />

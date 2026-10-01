@@ -1,0 +1,27 @@
+{
+  // Single source of truth for the deploy target and the Cloudflare bindings.
+  //
+  // Nitro's cloudflare preset merges this file into the generated
+  // `.output/server/wrangler.json` (it supplies `main`, `assets` and the
+  // compatibility settings itself). `scripts/patch-wrangler.mjs` re-stamps the
+  // values below onto the generated config after every build.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "elite-gutters-zw",
+
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "elite-gutters-zw",
+      // Replace with the real id from `npx wrangler d1 create elite-gutters-zw`.
+      "database_id": "00000000-0000-0000-0000-000000000000",
+      "migrations_dir": "migrations"
+    }
+  ],
+
+  "r2_buckets": [
+    {
+      "binding": "MEDIA",
+      "bucket_name": "elite-gutters-zw-media"
+    }
+  ]
+}

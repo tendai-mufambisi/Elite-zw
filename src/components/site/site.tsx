@@ -18,8 +18,8 @@ import {
   notFoundPage,
   services,
   site,
-  whatsappLink,
 } from "@/data/content";
+import { useContact, useImageLookup, useSiteData } from "@/components/site/site-data";
 import { GutterProfileDrawing } from "@/components/site/illustrations";
 import { Reveal } from "@/components/site/Reveal";
 import { getImage, getVideo } from "@/data/images";
@@ -41,7 +41,7 @@ export function Media({
   priority?: boolean;
   sizes?: string;
 }) {
-  const image = getImage(slot);
+  const image = useImageLookup()(slot);
   return (
     <img
       data-slot={slot}
@@ -119,6 +119,7 @@ function NavItemLink({ item }: { item: (typeof nav)[number] }) {
 }
 
 export function Header() {
+  const contact = useContact();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = useRouterState({ select: (state) => state.location.pathname });
@@ -176,7 +177,7 @@ export function Header() {
               Get a Free Quote <ArrowUpRight />
             </Link>
           </Button>
-          <a href={site.phoneHref} className="mobile-call" aria-label={`Call ${site.phone}`}>
+          <a href={contact.phoneHref} className="mobile-call" aria-label={`Call ${contact.phone}`}>
             <Phone size={19} />
           </a>
           <Button
@@ -224,6 +225,7 @@ export function Header() {
 }
 
 export function Footer() {
+  const contact = useContact();
   return (
     <footer className="footer">
       <div className="container footer-grid">
@@ -252,17 +254,17 @@ export function Footer() {
         </nav>
         <div>
           <h2>Get in touch</h2>
-          <a href={site.phoneHref}>
-            <Phone size={15} aria-hidden="true" /> {site.phone}
+          <a href={contact.phoneHref}>
+            <Phone size={15} aria-hidden="true" /> {contact.phone}
           </a>
-          <a href={site.whatsapp} target="_blank" rel="noopener noreferrer">
+          <a href={contact.whatsappLink()} target="_blank" rel="noopener noreferrer">
             <MessageCircle size={15} aria-hidden="true" /> WhatsApp us
           </a>
-          <a href={`mailto:${site.email}`}>
-            <Mail size={15} aria-hidden="true" /> {site.email}
+          <a href={`mailto:${contact.email}`}>
+            <Mail size={15} aria-hidden="true" /> {contact.email}
           </a>
           <a
-            href={site.facebook}
+            href={contact.facebook}
             target="_blank"
             rel="noopener noreferrer"
             className="footer-social"
@@ -279,7 +281,11 @@ export function Footer() {
       </div>
       <div className="container footer-bottom">
         <span>
-          © {new Date().getFullYear()} {site.name}
+          {/* The © is the owner's hidden way into the dashboard; it looks like plain text. */}
+          <a href="/admin/login" className="footer-owner-link" aria-label="Owner area">
+            ©
+          </a>{" "}
+          {new Date().getFullYear()} {site.name}
         </span>
         <span>
           {site.tagline} · {site.secondary}
@@ -409,6 +415,7 @@ export function QuoteBand({
   /** Background photo that scrolls slower than the page. */
   slot?: string;
 }) {
+  const contact = useContact();
   return (
     <section className="quote-band">
       <div className="band-media" data-parallax="0.3" aria-hidden="true">
@@ -427,7 +434,7 @@ export function QuoteBand({
             </Link>
           </Button>
           <Button asChild variant="lightOutline" size="large">
-            <a href={site.whatsapp} target="_blank" rel="noopener noreferrer">
+            <a href={contact.whatsappLink()} target="_blank" rel="noopener noreferrer">
               WhatsApp Us <ArrowUpRight />
             </a>
           </Button>
@@ -546,18 +553,24 @@ export function ParallaxBand({
   );
 }
 
-/** "Meet the founder". Renders nothing until the client details are filled in content.ts. */
+/** "Meet the founder". Name and photo are set in the dashboard; hidden while the name is empty. */
 export function FounderSection() {
-  if (!founder.name) return null;
+  const { founder: live } = useSiteData();
+  const contact = useContact();
+  if (!live.name) return null;
+  // The bio is written for the shipped founder and number; keep both current.
+  const bio = founder.bio.map((p) =>
+    p.replaceAll(founder.name, live.name).replaceAll(site.phone, contact.phone),
+  );
   return (
     <section className="section founder">
       <div className="container content-split">
         {founder.photoSlot && <Media slot={founder.photoSlot} className="founder-photo" />}
         <div>
           <Eyebrow>Meet the founder</Eyebrow>
-          <h2>{founder.name}</h2>
+          <h2>{live.name}</h2>
           <p className="founder-role">{founder.role}</p>
-          {founder.bio.map((p) => (
+          {bio.map((p) => (
             <p key={p}>{p}</p>
           ))}
         </div>
@@ -568,6 +581,7 @@ export function FounderSection() {
 
 /** Domestic & industrial gutter profiles (seamless gutters page and home). */
 export function GutterProfiles() {
+  const contact = useContact();
   return (
     <section className="section" id="gutter-profiles">
       <div className="container">
@@ -596,7 +610,7 @@ export function GutterProfiles() {
           <p>{gutterProfiles.note}</p>
           <Button asChild variant="brand" size="large">
             <a
-              href={whatsappLink(gutterProfiles.whatsappText)}
+              href={contact.whatsappLink(gutterProfiles.whatsappText)}
               target="_blank"
               rel="noopener noreferrer"
             >

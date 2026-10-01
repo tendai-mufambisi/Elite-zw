@@ -3,6 +3,7 @@ import { MessageCircle, Play, Volume2, VolumeX, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { site, whatsappPopup } from "@/data/content";
 import { getImage, getVideo } from "@/data/images";
+import { useContact, useImageLookup } from "@/components/site/site-data";
 
 const reducedMotion = () =>
   typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -187,6 +188,7 @@ export function CardSlider({
   /** Optional finish name per slot, shown on its photo. */
   labels?: Readonly<Record<string, string>> | undefined;
 }) {
+  const lookup = useImageLookup();
   const ref = useRef<HTMLDivElement>(null);
   const [index, setIndex] = useState(0);
   const [animate, setAnimate] = useState(true);
@@ -245,7 +247,7 @@ export function CardSlider({
       >
         {slides.map((slot, i) => {
           if (i > 0 && !loaded) return <div key={`${slot}-${i}`} className="card-slide" />;
-          const image = getImage(slot);
+          const image = lookup(slot);
           return (
             <div key={`${slot}-${i}`} className="card-slide">
               <img
@@ -352,6 +354,7 @@ export function Reel({ slot, label }: { slot: string; label: string }) {
  * after a few seconds. The bubble is small, sits above the button and can be dismissed.
  */
 export function WhatsAppWidget() {
+  const contact = useContact();
   const [stage, setStage] = useState<"hidden" | "typing" | "open">("hidden");
   const [dismissed, setDismissed] = useState(true);
   useEffect(() => {
@@ -417,7 +420,7 @@ export function WhatsAppWidget() {
               </p>
               <a
                 className="wa-bubble-cta"
-                href={site.whatsapp}
+                href={contact.whatsappLink()}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={close}
@@ -430,7 +433,7 @@ export function WhatsAppWidget() {
       )}
       <a
         className="whatsapp-float"
-        href={site.whatsapp}
+        href={contact.whatsappLink()}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat with Elite Gutters on WhatsApp"

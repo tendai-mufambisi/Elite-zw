@@ -14,6 +14,8 @@ import { ServiceDrawing } from "@/components/site/illustrations";
 import { Reel } from "@/components/site/motion";
 import { Reveal } from "@/components/site/Reveal";
 import { services } from "@/data/content";
+import { useSiteData } from "@/components/site/site-data";
+import { galleryFor } from "@/data/site-data";
 import { getVideo } from "@/data/images";
 import { breadcrumb, faqSchema, pageHead, serviceSchema } from "@/data/seo";
 
@@ -42,6 +44,7 @@ export const Route = createFileRoute("/services/$slug")({
 
 function ServicePage() {
   const s = Route.useLoaderData();
+  const gallery = galleryFor(s, useSiteData());
   const index = services.findIndex((item) => item.slug === s.slug);
   // The next three services in menu order, wrapping around.
   const related = [1, 2, 3].map((n) => services[(index + n) % services.length]!);
@@ -108,14 +111,14 @@ function ServicePage() {
         </section>
       )}
 
-      {s.gallery.length > 0 && (
+      {gallery.length > 0 && (
         <section className="section section-soft">
           <div className="container">
             <Reveal>
               <SectionHead eyebrow="Gallery" title="The finished look." />
             </Reveal>
             <div className="gallery-grid">
-              {s.gallery.map((slot) => (
+              {gallery.map((slot) => (
                 <Media key={slot} slot={slot} />
               ))}
             </div>
