@@ -61,7 +61,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: site.name },
-      { name: "theme-color", content: "#14213d" },
+      { name: "theme-color", content: "#1f3f9e" },
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "en_ZW" },
       { property: "og:site_name", content: site.name },
@@ -85,7 +85,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Macondo&family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Macondo&family=Outfit:wght@500;600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap",
       },
     ],
     scripts: [{ type: "application/ld+json", children: JSON.stringify(businessSchema) }],
