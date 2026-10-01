@@ -285,13 +285,6 @@ const photos = [
     1000,
     "Sample placeholder picture for Mr Peter, founder",
   ),
-  img(
-    "colour-range-chart",
-    "colour-range/colour-coated-gutter-colour-samples.webp",
-    922,
-    2048,
-    "Display board of colour-coated steel gutter samples with a matching downpipe",
-  ),
 ];
 
 // AI-generated illustrations (used where no real photo exists yet; never in the Projects gallery).

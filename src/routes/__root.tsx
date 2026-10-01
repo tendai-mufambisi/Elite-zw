@@ -60,7 +60,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: site.name },
       { name: "theme-color", content: "#14213d" },
       { property: "og:type", content: "website" },
-      { property: "og:locale", content: "en_ZA" },
+      { property: "og:locale", content: "en_ZW" },
       { property: "og:site_name", content: site.name },
     ],
     links: [
@@ -95,7 +95,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en-ZA">
+    <html lang="en-ZW">
       <head>
         <HeadContent />
       </head>

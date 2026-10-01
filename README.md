@@ -1,6 +1,6 @@
 # Elite Gutters and Aluminium Products
 
-Marketing site for [eliteguttersandaluminium.co.za](https://eliteguttersandaluminium.co.za) — _Build | Protect | Enhance_.
+Marketing site for [eliteguttersandaluminiumproducts.co.zw](https://eliteguttersandaluminiumproducts.co.zw) (Zimbabwe) — _Build | Protect | Enhance_.
 
 Built with TanStack Start (React, Vite, TypeScript, Tailwind). Connected to [Lovable](https://lovable.dev/projects/1e3058c4-8346-4e49-a85f-cfea4a2f31fa): commits pushed to `main` sync back to the Lovable editor.
 

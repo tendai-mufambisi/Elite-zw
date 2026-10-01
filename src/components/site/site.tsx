@@ -451,7 +451,6 @@ export function ArrowLink({
 }: {
   to:
     | "/projects"
-    | "/colour-range"
     | "/contact"
     | "/why-seamless-gutters"
     | "/commercial-industrial"

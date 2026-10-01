@@ -3,15 +3,14 @@ import {
   ArrowUpRight,
   Building2,
   CloudRain,
+  Droplets,
   Layers,
-  Palette,
   ShieldCheck,
   Sparkles,
   Waves,
   Wrench,
   type LucideIcon,
 } from "lucide-react";
-import type { CSSProperties } from "react";
 import { Button } from "@/components/ui/button";
 import {
   ArrowLink,
@@ -27,7 +26,7 @@ import {
 import { ServiceDrawing } from "@/components/site/illustrations";
 import { CardSlider, HeroVideo, Reel, TextRotator } from "@/components/site/motion";
 import { Reveal } from "@/components/site/Reveal";
-import { benefits, colours, home, projects, services, site } from "@/data/content";
+import { benefits, home, projects, services, site } from "@/data/content";
 import { getImage } from "@/data/images";
 import { pageHead } from "@/data/seo";
 
@@ -41,7 +40,7 @@ const benefitIcons: Record<(typeof benefits)[number]["icon"], LucideIcon> = {
   waves: Waves,
   "cloud-rain": CloudRain,
   layers: Layers,
-  palette: Palette,
+  droplets: Droplets,
   sparkles: Sparkles,
   wrench: Wrench,
   building: Building2,
@@ -171,28 +170,6 @@ function Home() {
 
       <ParallaxBand {...home.bands[0]!} />
 
-      <section className="section">
-        <div className="container colour-teaser">
-          <Reveal variant="left">
-            <Eyebrow>{home.colourTeaser.eyebrow}</Eyebrow>
-            <h2>{home.colourTeaser.title}</h2>
-            <p>{home.colourTeaser.text}</p>
-            <ArrowLink to="/colour-range">View all gutter colours</ArrowLink>
-          </Reveal>
-          <Reveal variant="right">
-            <div
-              className="colour-bars"
-              role="img"
-              aria-label={`Gutter colours: ${colours.map(([n]) => n).join(", ")}`}
-            >
-              {colours.map(([name, colour], i) => (
-                <span key={name} style={{ "--swatch": colour, "--i": i } as CSSProperties} />
-              ))}
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
       <section className="section section-soft">
         <div className="container">
           <Reveal>
@@ -228,7 +205,7 @@ function Home() {
                 <li key={x}>{x}</li>
               ))}
             </ul>
-            <ArrowLink to="/colour-range">Explore the colour range</ArrowLink>
+            <ArrowLink to="/projects">See our projects</ArrowLink>
           </Reveal>
         </div>
         <div className="feature-images">

@@ -12,7 +12,6 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as BenefitsOfSeamlessGuttersRouteImport } from './routes/benefits-of-seamless-gutters'
-import { Route as ColourRangeRouteImport } from './routes/colour-range'
 import { Route as CommercialIndustrialRouteImport } from './routes/commercial-industrial'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ProjectsRouteImport } from './routes/projects'
@@ -35,11 +34,6 @@ const BenefitsOfSeamlessGuttersRoute =
     path: '/benefits-of-seamless-gutters',
     getParentRoute: () => rootRouteImport,
   } as any)
-const ColourRangeRoute = ColourRangeRouteImport.update({
-  id: '/colour-range',
-  path: '/colour-range',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const CommercialIndustrialRoute = CommercialIndustrialRouteImport.update({
   id: '/commercial-industrial',
   path: '/commercial-industrial',
@@ -70,7 +64,6 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/benefits-of-seamless-gutters': typeof BenefitsOfSeamlessGuttersRoute
-  '/colour-range': typeof ColourRangeRoute
   '/commercial-industrial': typeof CommercialIndustrialRoute
   '/contact': typeof ContactRoute
   '/projects': typeof ProjectsRoute
@@ -81,7 +74,6 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/benefits-of-seamless-gutters': typeof BenefitsOfSeamlessGuttersRoute
-  '/colour-range': typeof ColourRangeRoute
   '/commercial-industrial': typeof CommercialIndustrialRoute
   '/contact': typeof ContactRoute
   '/projects': typeof ProjectsRoute
@@ -93,7 +85,6 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/benefits-of-seamless-gutters': typeof BenefitsOfSeamlessGuttersRoute
-  '/colour-range': typeof ColourRangeRoute
   '/commercial-industrial': typeof CommercialIndustrialRoute
   '/contact': typeof ContactRoute
   '/projects': typeof ProjectsRoute
@@ -106,7 +97,6 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/benefits-of-seamless-gutters'
-    | '/colour-range'
     | '/commercial-industrial'
     | '/contact'
     | '/projects'
@@ -117,7 +107,6 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/benefits-of-seamless-gutters'
-    | '/colour-range'
     | '/commercial-industrial'
     | '/contact'
     | '/projects'
@@ -128,7 +117,6 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/benefits-of-seamless-gutters'
-    | '/colour-range'
     | '/commercial-industrial'
     | '/contact'
     | '/projects'
@@ -140,7 +128,6 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   BenefitsOfSeamlessGuttersRoute: typeof BenefitsOfSeamlessGuttersRoute
-  ColourRangeRoute: typeof ColourRangeRoute
   CommercialIndustrialRoute: typeof CommercialIndustrialRoute
   ContactRoute: typeof ContactRoute
   ProjectsRoute: typeof ProjectsRoute
@@ -169,13 +156,6 @@ declare module '@tanstack/react-router' {
       path: '/benefits-of-seamless-gutters'
       fullPath: '/benefits-of-seamless-gutters'
       preLoaderRoute: typeof BenefitsOfSeamlessGuttersRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/colour-range': {
-      id: '/colour-range'
-      path: '/colour-range'
-      fullPath: '/colour-range'
-      preLoaderRoute: typeof ColourRangeRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/commercial-industrial': {
@@ -220,7 +200,6 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   BenefitsOfSeamlessGuttersRoute: BenefitsOfSeamlessGuttersRoute,
-  ColourRangeRoute: ColourRangeRoute,
   CommercialIndustrialRoute: CommercialIndustrialRoute,
   ContactRoute: ContactRoute,
   ProjectsRoute: ProjectsRoute,
