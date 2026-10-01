@@ -82,7 +82,7 @@ function SettingsAdmin() {
             </Field>
             <Field
               label="WhatsApp number"
-              hint="With the country code, e.g. 27 84 258 6400 or 263 77 123 4567."
+              hint="With the country code, e.g. 263 77 001 0502."
             >
               <input required value={form.whatsapp} onChange={set("whatsapp")} inputMode="tel" />
             </Field>

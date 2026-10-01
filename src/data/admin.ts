@@ -303,7 +303,7 @@ export const saveSettings = createServerFn({ method: "POST" })
     // wa.me links need digits only, in international format.
     const whatsapp = data.whatsapp.replace(/\D/g, "");
     if (whatsapp.length < 9 || whatsapp.startsWith("0")) {
-      throw new Error("Enter the WhatsApp number with its country code, e.g. 27 84 258 6400.");
+      throw new Error("Enter the WhatsApp number with its country code, e.g. 263 77 001 0502.");
     }
 
     const email = data.email.trim();

@@ -37,7 +37,7 @@ export type PhotoData = { src: string; width: number; height: number; alt: strin
 
 export type ContactSettings = {
   phone: string;
-  /** Digits only, international format without "+", e.g. 27842586400. */
+  /** Digits only, international format without "+", e.g. 263770010502. */
   whatsapp: string;
   email: string;
   facebook: string;

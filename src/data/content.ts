@@ -2,7 +2,7 @@
 // Zimbabwe site. British spelling throughout (colour, aluminium). No invented statistics, reviews,
 // years in business, service areas or guarantees.
 
-const whatsappNumber = "27842586400";
+const whatsappNumber = "263770010502";
 const quoteText = "Hi Elite Gutters, I'd like a quote.";
 
 export const site = {
@@ -16,8 +16,8 @@ export const site = {
     "Seamless gutter specialists: stainless steel and colour-coated seamless gutters and downpipes, formed on site for homes, schools, commercial and industrial buildings in Zimbabwe. Also industrial box gutters, rainwater harvesting, gutter repairs and cleaning, fascia boards and bargeboards, pillar cladding, balustrades, aluminium doors and garage doors.",
   footerBlurb:
     "Seamless gutter specialists. Stainless steel and colour-coated seamless gutters, plus fascia boards and aluminium finishes to match. Built to protect.",
-  phone: "+27 84 258 6400",
-  phoneHref: "tel:+27842586400",
+  phone: "+263 77 001 0502",
+  phoneHref: "tel:+263770010502",
   whatsappNumber,
   email: "info@eliteguttersandaluminiumproducts.co.zw",
   facebook: "https://www.facebook.com/share/19c7jqKWq7/",
@@ -1415,7 +1415,7 @@ export const aboutPage = {
 export const contactPage = {
   metaTitle: "Contact Us & Get a Free Quote",
   metaDescription:
-    "Get a free quote for seamless gutters, fascia boards, balustrades, aluminium doors and garage doors. Call or WhatsApp +27 84 258 6400.",
+    "Get a free quote for seamless gutters, fascia boards, balustrades, aluminium doors and garage doors. Call or WhatsApp +263 77 001 0502.",
   intro: {
     eyebrow: "Contact",
     title: "Get a free quote.",
@@ -1440,7 +1440,7 @@ export const founder = {
   photoSlot: "founder",
   bio: [
     "Mr Peter is the founder of Elite Gutters and Aluminium Products.",
-    "Talk to him about your gutters, fascia, balustrades or aluminium project: call or WhatsApp +27 84 258 6400.",
+    "Talk to him about your gutters, fascia, balustrades or aluminium project: call or WhatsApp +263 77 001 0502.",
   ],
 };
 
